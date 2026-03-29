@@ -1,4 +1,3 @@
-import React from 'react';
 import { Download, Heart, FolderPlus } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useAppContext } from '../context/AppContext';

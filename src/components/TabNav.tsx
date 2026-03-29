@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Settings, Image, Package, Zap } from 'lucide-react';
 
 export type TabId = 'themes' | 'patterns' | 'bundles' | 'automation';

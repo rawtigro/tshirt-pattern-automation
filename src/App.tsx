@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Layout from './components/Layout';
 import TopBar from './components/TopBar';
 import TabNav from './components/TabNav';

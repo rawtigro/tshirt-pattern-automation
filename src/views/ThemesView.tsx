@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Plus } from 'lucide-react';
 import ThemeCard from '../components/ThemeCard';
 import { useAppContext } from '../context/AppContext';
