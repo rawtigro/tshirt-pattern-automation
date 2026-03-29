@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-slate-900 transition-colors duration-300;
+    background-color: #f8fafc;
+    background-image: 
+      radial-gradient(circle at top left, rgba(147, 197, 253, 0.4) 0%, transparent 40%),
+      radial-gradient(circle at top right, rgba(147, 197, 253, 0.4) 0%, transparent 40%),
+      radial-gradient(circle at bottom left, rgba(147, 197, 253, 0.4) 0%, transparent 40%),
+      radial-gradient(circle at bottom right, rgba(147, 197, 253, 0.4) 0%, transparent 40%);
+    background-attachment: fixed;
+  }
+  
+  .dark body {
+    @apply bg-background-dark text-slate-100;
+  }
+}
+
+/* Glassmorphism utilities */
+@layer utilities {
+  .glass {
+    @apply bg-white/70 backdrop-blur-md border border-white/20;
+  }
+  .dark .glass {
+    @apply bg-slate-900/70 backdrop-blur-md border border-slate-700/50;
+  }
+  
+  .glass-card {
+    @apply bg-white/95 backdrop-blur-sm border border-slate-200/50 shadow-sm transition-all;
+  }
+  .dark .glass-card {
+    @apply bg-slate-800/95 backdrop-blur-sm border border-slate-700/50 shadow-none;
+  }
+}
