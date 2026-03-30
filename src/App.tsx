@@ -20,7 +20,7 @@ function App() {
 
   return (
     <AppProvider>
-      <Layout>
+      <Layout onLogout={() => setIsLoggedIn(false)}>
         <TopBar />
         <TabNav activeTab={activeTab} setActiveTab={setActiveTab} />
         <div className="px-8 pb-12">

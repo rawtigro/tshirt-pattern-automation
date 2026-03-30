@@ -1,7 +1,7 @@
 import React from 'react';
-import { LayoutDashboard, PanelLeftClose, PanelLeft } from 'lucide-react';
+import { LayoutDashboard, PanelLeftClose, PanelLeft, LogOut } from 'lucide-react';
 
-export default function Sidebar() {
+export default function Sidebar({ onLogout }: { onLogout: () => void }) {
   const [isOpen, setIsOpen] = React.useState(true);
 
   return (
@@ -28,15 +28,26 @@ export default function Sidebar() {
         </nav>
       </div>
 
-      <div className={`p-4 border-t border-slate-200 dark:border-slate-800 flex items-center gap-3 transition-opacity duration-300 ${!isOpen && 'justify-center cursor-pointer'}`}>
-        <div className="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-300 font-semibold shrink-0">
-          P
+      <div className={`p-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between gap-3 transition-opacity duration-300 ${!isOpen && 'justify-center cursor-pointer'}`}>
+        <div className="flex items-center gap-3 overflow-hidden">
+          <div className="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-300 font-semibold shrink-0">
+            P
+          </div>
+          {isOpen && (
+            <div className="flex flex-col overflow-hidden">
+              <span className="text-sm font-semibold text-slate-900 dark:text-slate-100 truncate">Prashant Rawat</span>
+              <span className="text-xs text-slate-500 dark:text-slate-400 truncate">rawtigro@gmail.com</span>
+            </div>
+          )}
         </div>
         {isOpen && (
-          <div className="flex flex-col overflow-hidden">
-            <span className="text-sm font-semibold text-slate-900 dark:text-slate-100 truncate">Prashant Rawat</span>
-            <span className="text-xs text-slate-500 dark:text-slate-400 truncate">rawtigro@gmail.com</span>
-          </div>
+          <button 
+            onClick={onLogout}
+            className="p-2 rounded-lg hover:bg-red-50 dark:hover:bg-red-500/10 text-slate-400 hover:text-red-600 dark:hover:text-red-400 transition-all group"
+            title="Sign Out"
+          >
+            <LogOut size={18} className="group-hover:translate-x-0.5 transition-transform" />
+          </button>
         )}
       </div>
     </aside>
